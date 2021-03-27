@@ -25,7 +25,7 @@ class App {
     fs.readdir(COMPONENTS_PATH, (err, files) => {
       files.forEach(file => {
         const router = require(path.resolve(`${COMPONENTS_PATH}${file}/${ROUTES_FILENAME}`));
-        this.instance.use('/', router.routes);
+        this.instance.use(`/${file}`, router.routes);
       });
     })
   }
