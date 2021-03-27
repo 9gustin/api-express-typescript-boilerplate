@@ -22,10 +22,10 @@ class App {
 
   //Read all routes files in components path
   useRoutes () {
-    fs.readdir(COMPONENTS_PATH, (err, files) => {
-      files.forEach(file => {
-        const router = require(path.resolve(`${COMPONENTS_PATH}${file}/${ROUTES_FILENAME}`));
-        this.instance.use(`/${file}`, router.routes);
+    fs.readdir(COMPONENTS_PATH, (err, components) => {
+      components.forEach(componentName => {
+        const router = require(path.resolve(`${COMPONENTS_PATH}${componentName}/${ROUTES_FILENAME}`));
+        this.instance.use(`/${componentName}`, router.routes);
       });
     })
   }
