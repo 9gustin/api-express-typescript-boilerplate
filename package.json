@@ -1,5 +1,5 @@
 {
-  "name": "adogtemos-backend",
+  "name": "api-express-typescript-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
